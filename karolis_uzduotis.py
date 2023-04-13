@@ -16,7 +16,7 @@ if Ginklas == "Kumstis":
     print(f"Jus trenkete monstrui, bet jis nieko nepajuto... \U0001F923")
 elif Ginklas == "Kardas":
     print(f"Jus smogete monstrui kardu, ir jus ji iveikete! \U0001f600")
-elif Ginkas == "Lankas":
+elif Ginklas == "Lankas":
     print(f"Jus saunate i monstra su lanku, bet jis pagavo strele ir mete ja i jus... \U0001F606")
 else:
     print(f"Netinkamas ginklo paisirinkimas. ")
