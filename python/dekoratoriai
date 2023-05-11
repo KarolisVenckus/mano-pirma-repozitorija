@@ -1,0 +1,47 @@
+# class Studentas:
+#     def __init__(self, vardas: str, pavarde: str, amzius: int):
+#         self.vardas = vardas
+#         self.pavarde = pavarde
+#         self.amzius = amzius
+
+#     @property
+#     def pilnas_vardas(self) -> str:
+#         return f"{self.vardas} {self.pavarde}"
+
+#     @staticmethod
+#     def ar_pilnametis(amzius: int) -> bool:
+#         return amzius >= 18
+
+#     @classmethod
+#     def sukurti_studenta(cls, vardas: str, pavarde: str, amzius: int):
+#         return cls(vardas, pavarde, amzius)
+
+
+# # Sukuriame keletą studentų objektų
+# studentas1 = Studentas.sukurti_studenta("Jonas", "Jonaitis", 19)
+# studentas2 = Studentas.sukurti_studenta("Petras", "Petraitis", 17)
+
+# # Patikriname pilnas_vardas metodą
+# print(studentas1.pilnas_vardas)  # Jonas Jonaitis
+# print(studentas2.pilnas_vardas)  # Petras Petraitis
+
+# # Patikriname ar_pilnametis metodą
+# print(Studentas.ar_pilnametis(studentas1.amzius))  # True
+# print(Studentas.ar_pilnametis(studentas2.amzius))  # False
+# print(studentas1.ar_pilnametis(studentas1.amzius))  # True
+# print(studentas2.ar_pilnametis(studentas2.amzius))  # False
+
+
+def didziosiomis_raides(func):
+    def wrapper(*args, **kwargs):
+        args = [str(arg).upper() for arg in args]
+        kwargs = {k: str(v).upper() for k, v in kwargs.items()}
+        result = func(*args, **kwargs)
+        return str(result).upper()
+    return wrapper
+
+@didziosiomis_raides
+def pasisveikink(vardas: str, pavarde: str) -> str:
+    return f"Sveikas, {vardas} {pavarde}!"
+
+print(pasisveikink("Karolis", "Venckus"))  # SVEIKAS, JONAS JONAITIS!
